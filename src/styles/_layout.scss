@@ -1,0 +1,93 @@
+
+/* === Start = General Layout ======== */
+
+
+.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12 {
+
+  padding-left: 30px;
+  padding-right: 30px;
+
+}
+
+.row {
+  margin-left: -30px;
+  margin-right: -30px;
+}
+
+.container-fluid {
+
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+
+
+html, body, .container-fluid-2, .fullHeight {
+    height: 100%;
+}
+
+#header-wrap {
+    height: $headerHeight;
+    background: $primaryBrandColour;
+}
+
+.contentContainer {
+    position: relative;
+    height: calc(100% - #{$headerHeight + (2*$secondaryHeight)});
+}
+
+.main {
+    height: calc(100% - #{$secondaryHeight});
+    position: relative;
+}
+
+.mainBlock {
+    max-height: 100%;
+}
+
+#csh_area {
+  height: 80%;
+}
+
+#csh_area div.contentContainer,
+#csh_area div.scrollableContent {
+  height: 100%;
+}
+
+#csh_area div.scrollableContent-20 {
+  height: 20%;
+}
+
+#csh_area div.scrollableContent-60 {
+  height: 20%;
+}
+
+.directive-wrapper{
+  width: inherit;
+  height: inherit;
+}
+
+.left-col {
+  padding-left: 0px;
+}
+
+.right-col {
+  padding-right: 0;
+}
+
+
+
+
+/* Extra Small Devices, Phones */ 
+
+@media only screen and (max-width : 765px) {
+
+  .left-col {
+    padding-right: 0;
+  }
+
+  .right-col{
+    padding-left: 0;
+  }
+
+}/* End - Extra Small Devices */ 

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html ng-app="aah-guru">
+<head>
+
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="http://ajax.aspnetcdn.com/ajax/signalr/jquery.signalr-2.1.2.min.js"></script>
+
+    <script src="js/guru.js"></script>
+
+
+    <link rel="stylesheet" type="text/css" href="styles/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="styles/hotkeys.css">
+    <link rel='stylesheet' type='text/css' href='styles/ng-scrollbar.min.css' media='all' />
+    <link rel="stylesheet" type="text/css" href="styles/main.css">
+    <title>Guru</title>
+</head>
+<body id="theme-aa">
+    <div class="container-fluid">
+        <div ui-view="header">
+        </div>
+        <div class="row">
+            <div class="col-sm-6 col-xs-12 center-col">
+                <div ui-view="content_area" class="row"></div>
+            </div>
+            <div id="right-col" ui-view="summary" class="col-sm-3 col-xs-12 right-col"></div>
+        </div>
+        <div ui-view="footer" class="row"></div>
+    </div>
+</body>
+</html>

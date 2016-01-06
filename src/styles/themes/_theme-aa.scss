@@ -1,0 +1,48 @@
+/* === Start = Theme AA ======== */
+// config
+$palettes: (
+    branding: (
+        dark:       #e6b901,    /* Dark Yellow */
+        base:       #ffcc00,    /* Primary Brand Color */
+        light:      #ffe69a     /* Light Yellow */
+    ),
+    content: (
+        x-dark:     #202226,    /* Off Black */
+        dark:       #323C4B,    /* Footer Black */
+        mid-dark:   #6B6C70,    /* Dark Grey */
+        base:       #e3e5e9,    /* Background Grey */
+        mid-light:  #f5f6f7,    /* Light Grey */
+        light:      #ffffff     /* White */
+    ),
+    functional: (
+        dark:       #006760,    /* Dark Teal */
+        base:       #059E93,    /* Teal */
+        light:      lighten(#059E93, 10%),   /********* Check colors - tbc *********/
+        positive:   #34985e,    /* Green */
+        negative:   #ee634c,    /* Red */
+        warning:    darken(#ee634c, 20%),   /********* Check colors - tbc *********/
+        alert:      darken(#ee634c, 30%)    /********* Check colors - tbc *********/
+    )
+);
+
+// Palette function
+@function palette($palette, $tone: 'base') {
+    @return map-get(map-get($palettes, $palette), $tone);
+}
+
+
+// config
+$sizes: (
+    spacing: (
+        x-small:  10px,
+        mid-small: 15px,
+        small:    20px,    
+        medium:   30px,    
+        large:    40px 
+    ),
+);
+
+// Sizing function
+@function size($size, $length) {
+    @return map-get(map-get($sizes, $size), $length);
+}

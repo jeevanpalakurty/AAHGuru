@@ -1,0 +1,17 @@
+$errorClose: #EE634C;
+$headerHeight: 40px;
+$secondaryHeight: 40px;
+$lightgreyColor: #e3e5e9;
+$darkgreyColor: #6b6c70;
+$primaryAABlack: #202226;
+$verticalGutter: 30px;
+$horizontalGutter: 15px;
+$primaryBrandColour: #ffcc00 !default;
+$greenActive:#34985e;
+$footerColor: #6b6c70;
+$buttonWidth: 40px;
+$myHeight: percentage (100% - #{$headerHeight + (2*$secondaryHeight)});
+
+$overlay-arrow-size: 10px;
+$overlay-colour: rgba(32, 34, 38, 0.9);
+$markerExtraHeight: 40px;

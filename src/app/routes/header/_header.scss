@@ -1,0 +1,70 @@
+#header{
+  background-color: palette(content, light);
+  margin-bottom: 20px;
+  height: size(spacing, large);
+
+  .bubble {
+    margin-top: 10px;
+
+    .arrow {
+      border-bottom: 10px solid palette(content, dark);
+      border-top: 0 none;
+      bottom: initial;
+      top: -10px;
+    }
+  }
+
+  .aa-beam-logo {
+    display: block;
+    width: 117px;
+    height: 82px;
+    background: url(../assets/aa-beam.png) no-repeat top left;
+    background-size: cover;
+    position:absolute;
+    z-index:100;
+  }
+
+
+  .icon-aa-logo{
+    color: palette(content, dark);
+  }
+
+  .alert-area {
+    position: relative;
+
+    .alert {
+      padding-top: 0;
+      padding-bottom: 0;
+      line-height: 40px;
+      position: absolute;
+      z-index: 5555;
+      background-color: palette(functional, positive);
+      border-left:1px solid palette(branding, base);
+      border-right:1px solid palette(branding, base);
+      color: palette(content, light);
+      width:100%;
+
+      button{
+        width:40px;
+        height:40px;
+        opacity:1;
+        margin-right:-15px;
+        text-shadow:none;
+
+        span{
+          color:palette(content, light);
+          text-align:center;
+          width:100%;
+        }
+      }
+
+      button:hover{
+
+        span{
+          color:palette(content, dark);
+        }
+
+      }
+    }
+  }
+}

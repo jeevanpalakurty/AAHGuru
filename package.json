@@ -24,7 +24,7 @@
     "angular-ui-router": "^0.2.15",
     "bootstrap": "^3.3.5",
     "lodash": "^3.10.1",
-    "malstrom-models": "*",
+    //"malstrom-models": "*",
     "ng-scrollbar": "0.0.8"
 },
   "devDependencies":{

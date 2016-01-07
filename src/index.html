@@ -18,11 +18,10 @@
     <div class="container-fluid">
         <div ui-view="header">
         </div>
-        <div class="row">
-            <div class="col-sm-6 col-xs-12 center-col">
-                <div ui-view="content_area" class="row"></div>
-            </div>
-            <div id="right-col" ui-view="summary" class="col-sm-3 col-xs-12 right-col"></div>
+        <div class="row col-sm-6 col-xs-12 center-col">
+
+            <div ui-view="content_area"></div>
+
         </div>
         <div ui-view="footer" class="row"></div>
     </div>

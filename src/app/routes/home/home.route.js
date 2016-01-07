@@ -4,8 +4,9 @@ require('angular');
 module.exports = angular.module('aah-home-route-module', [
 	// directives
 	require('../header/header.controller').name,
-	require('../emergency-messages/emergency-messages.controller').name,
-	require('../footer/footer.controller').name
+	require('./home.controller').name,
+	require('../footer/footer.controller').name,
+	require('../../components/carousel/carousel.directive').name,
 ]).config(['$stateProvider', '$urlRouterProvider', function HomeConfig($stateProvider, $urlRouterProvider) {
 
 	$urlRouterProvider.otherwise('/guru');

@@ -9,31 +9,44 @@ module.exports = angular.module('aah-guru-carousel-controller-module', [
 		_slides = [];
 
 	_slides.push({
-		url: '#home',
-		image: 'http://placekitten.com/300/200'
+		url: '/vehicle',
+		image: 'assets/vehicle.jpg'
 	});
 
 	_slides.push({
-		url: '#home',
-		image: 'http://placekitten.com/307/200'
+		url: '/callHandler',
+		image: 'assets/Call_Handler.jpg'
 	});
 	_slides.push({
-		url: '#home',
-		image: 'http://placekitten.com/302/200'
+		url: '/patrol',
+		image: 'assets/patrol.jpg'
 	});
 	_slides.push({
-		url: '#home',
-		image: 'http://placekitten.com/305/200'
+		url: '/location',
+		image: 'assets/location.jpg'
+	});
+
+	_slides.push({
+		url: '/supplier',
+		image: 'assets/supplier.jpg'
+	});
+
+	_slides.push({
+		url: '/parts',
+		image: 'assets/Parts.jpg'
+	});
+
+	_slides.push({
+		url: '/task',
+		image: 'assets/Task.jpg'
 	});
 
 	function setActive(idx) {
 		_slides[idx].active = true;
 	}
 
-	//runing every tim controller is accessed
+	//running every tim controller is accessed
 	//_slides.setActive($route.current.params.slide || 0);
-
-
 
 
 	_.extend(ctrl, {

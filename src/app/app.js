@@ -13,8 +13,8 @@ angular.module('aah-guru', [
 	ng_messages,
 
 	// routes
-	require('./routes/home/home.route').name
-
+	require('./routes/home/home.route').name,
+	require('./routes/location/location.route').name
 
 ]).config(['$compileProvider', function ($compileProvider) {
 	// $compileProvider.debugInfoEnabled(false);

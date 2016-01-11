@@ -8,51 +8,103 @@ module.exports = angular.module('aah-guru-carousel-controller-module', [
 	var ctrl = this,
 		_slides = [];
 
-	_slides.push({
-		url: '/vehicle',
-		image: 'assets/vehicle.jpg'
-	});
+	function _activate() {
 
-	_slides.push({
-		url: '/callHandler',
-		image: 'assets/Call_Handler.jpg'
-	});
-	_slides.push({
-		url: '/patrol',
-		image: 'assets/patrol.jpg'
-	});
-	_slides.push({
-		url: '/location',
-		image: 'assets/location.jpg'
-	});
+		$('.guru-carousel-child').each(function(){
+			var next = $(this).next();
+			if (!next.length) {
+				next = $(this).siblings(':first');
+			}
+			next.children(':first-child').clone().appendTo($(this));
 
-	_slides.push({
-		url: '/supplier',
-		image: 'assets/supplier.jpg'
-	});
+			if (next.next().length>0) {
+				next.next().children(':first-child').clone().appendTo($(this));
+			}
+			else {
+				$(this).siblings(':first').children(':first-child').clone().appendTo($(this));
+			}
+		});
 
-	_slides.push({
-		url: '/parts',
-		image: 'assets/Parts.jpg'
-	});
+		_slides.push({
+			url: '#/vehicle',
+			image: 'assets/Thumb_1.png',
+			module: 'Vehicle'
+		});
 
-	_slides.push({
-		url: '/task',
-		image: 'assets/Task.jpg'
-	});
+		_slides.push({
+			url: '#/callHandler',
+			image: 'assets/Thumb_2.png',
+			module:'Call Handler'
+		});
+		_slides.push({
+			url: '#/patrol',
+			image: 'assets/Thumb_3.png',
+			module:'Patrol'
+		});
+		_slides.push({
+			url: '#/location',
+			image: 'assets/Thumb_4.png',
+			module:'Location'
+		});
 
-	function setActive(idx) {
-		_slides[idx].active = true;
+		_slides.push({
+			url: '#/supplier',
+			image: 'assets/Thumb_5.png',
+			module:'Supplier'
+		});
+
+		_slides.push({
+			url: '#/parts',
+			image: 'assets/Thumb_6.png',
+			module: 'Parts'
+		});
+
+		_slides.push({
+			url: '#/task',
+			image: 'assets/Thumb_7.png',
+			module: 'Task'
+		});
 	}
-
-	//running every tim controller is accessed
-	//_slides.setActive($route.current.params.slide || 0);
+	_activate();
 
 
 	_.extend(ctrl, {
 		slides: function slidesAccessor(){
 			return _slides;
+		},
+		isValid: function isValid() {
+			return false;
 		}
 
 	});
-}]);
+}]).directive('eatClickIf', ['$parse', '$rootScope',
+		function($parse, $rootScope) {
+			return {
+				priority: 100,
+				restrict: 'A',
+				compile: function($element, attr) {
+					var fn = $parse(attr.eatClickIf);
+					return {
+						pre: function link(scope, element) {
+							var eventName = 'click';
+							element.on(eventName, function(event) {
+								var callback = function() {
+									if (fn(scope, {$event: event})) {
+										event.stopImmediatePropagation();
+										event.preventDefault();
+										return false;
+									}
+								};
+								if ($rootScope.$$phase) {
+									scope.$evalAsync(callback);
+								} else {
+									scope.$apply(callback);
+								}
+							});
+						},
+						post: function() {}
+					}
+				}
+			}
+		}
+])

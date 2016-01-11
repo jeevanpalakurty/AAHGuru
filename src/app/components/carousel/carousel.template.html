@@ -1,32 +1,71 @@
-<div class="col-md-12 col-sm-12 col-xs-12">
-    <div uib-carousel>
-        <div uib-slide ng-repeat="slide in ctrl.slides()" active="slide.active">
-            <div >
-                <div>
-                    <img ng-src="{{slide.image}}" style="float: left;">
-                </div>
-                <div >
-                        <img ng-src="{{ctrl.slides()[$index+1].image}}"  style="float:left;width: 200px;" >
-                </div>
-                <div >
-                    <img ng-src="{{ctrl.slides()[$index+2].image}}" style="float:left;width: 200px" >
+<div class="guru-carousel col-md-12 col-sm-12 col-xs-12">
+    <div uib-carousel pause="false">
+        <div  uib-slide  ng-repeat="slide in ctrl.slides()" active="slide.active">
+            <div  class="guru-carousel-child">
+                <div class="col-sm-2">
+                    <div class="row">
+                        <img class="guru-dashboard-image" ng-src="{{slide.image}}">
+                    </div>
+
+                    <div class="row" style="background-color: yellow">
+                        <a ui-sref="location" eat-click-if="ctrl.isValid()"><p><b>{{slide.module}}</b></p></a>
+                    </div>
                 </div>
 
-                <div >
-                    <img ng-src="{{ctrl.slides()[$index+3].image}}" style="float:left;width: 200px" >
+                <div class="col-sm-2">
+                    <div class="row">
+                        <img class="guru-dashboard-image" ng-src="{{ctrl.slides()[$index+1].image}}">
+                    </div>
+
+                    <div class="row" style="background-color: yellow">
+                        <a ui-sref=""><p><b>{{ctrl.slides()[$index+1].module}}</b></p></a>
+                    </div>
                 </div>
 
-                <div >
-                    <img ng-src="{{ctrl.slides()[$index+4].image}}" style="float:left;width: 200px" >
+                <div class="col-sm-2">
+                    <div class="row">
+                        <img class="guru-dashboard-image" ng-src="{{ctrl.slides()[$index+2].image}}">
+                    </div>
+
+                    <div class="row" style="background-color: yellow">
+                        <a ui-sref="slide.url"><p><b>{{ctrl.slides()[$index+2].module}}</b></p></a>
+                    </div>
                 </div>
-                <div >
-                    <img ng-src="{{ctrl.slides()[$index+5].image}}" style="float:left;width: 200px" >
+
+
+                <div class="col-sm-2">
+                    <div class="row">
+                        <img class="guru-dashboard-image" ng-src="{{ctrl.slides()[$index+3].image}}">
+                    </div>
+
+                    <div class="row" style="background-color: yellow">
+                        <a ui-sref="slide.url"><p><b>{{ctrl.slides()[$index+3].module}}</b></p></a>
+                    </div>
+
                 </div>
-                <div class="carousel-caption">
-                    <h4>Slide {{$index}}</h4>
-                    <a href="{{slide.url}}">View More</a>
+
+                <div class="col-sm-2">
+                    <div class="row">
+                        <img class="guru-dashboard-image" ng-src="{{ctrl.slides()[$index+4].image}}">
+                    </div>
+
+                    <div class="row" style="background-color: yellow">
+                        <a ui-sref="slide.url"><p><b>{{ctrl.slides()[$index+4].module}}</b></p></a>
+                    </div>
                 </div>
+
+                <div class="col-sm-2">
+                    <div class="row">
+                        <img class="guru-dashboard-image" ng-src="{{ctrl.slides()[$index+5].image}}">
+                    </div>
+
+                    <div class="row" style="background-color: yellow">
+                        <a ui-sref="slide.url"><p><b>{{ctrl.slides()[$index+5].module}}</b></p></a>
+                    </div>
+                </div>
+
             </div>
+
         </div>
     </div>
-            </div>
+</div>

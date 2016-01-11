@@ -1,3 +1,39 @@
-.aa-guru-carousel {
+.guru-carousel {
   display: block;
+
+  .carousel-inner {
+    margin-top:2px;
+  }
+
+  .glyphicon {
+
+    &.glyphicon-chevron-left{
+      margin-left:-50px;
+    }
+
+    &.glyphicon-chevron-right {
+      margin-right:-50px;
+    }
+  }
+
+  .carousel-indicators {
+    display: none;
+  }
+  .carousel-control {
+
+    &.right, &.left {
+      background-image: none;
+    }
+  }
+
+  .guru-carousel-child:first-child {
+    margin-left: 150px;
+
+    .guru-dashboard-image {
+      float: left;
+      height: 150px;
+      width: 250px;
+    }
+  }
+
 }

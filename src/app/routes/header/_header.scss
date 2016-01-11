@@ -1,6 +1,5 @@
 #header{
   background-color: palette(content, light);
-  margin-bottom: 20px;
   height: size(spacing, large);
 
   .bubble {
@@ -16,11 +15,11 @@
 
   .aa-beam-logo {
     display: block;
-    width: 117px;
-    height: 82px;
+    width: 180px;
+    height: 120px;
     background: url(../assets/aa-beam.png) no-repeat top left;
     background-size: cover;
-    position:absolute;
+    position:fixed;
     z-index:100;
   }
 
@@ -44,27 +43,39 @@
       color: palette(content, light);
       width:100%;
 
-      button{
+      button {
         width:40px;
         height:40px;
         opacity:1;
         margin-right:-15px;
         text-shadow:none;
 
-        span{
+        span {
           color:palette(content, light);
           text-align:center;
           width:100%;
         }
       }
 
-      button:hover{
-
+      button:hover {
         span{
           color:palette(content, dark);
         }
 
       }
+    }
+  }
+
+  .navbar {
+    background-color: white;
+    border-color: 1px solid transparent;
+    margin-bottom: 0px;
+  }
+
+  #admin_dropdown {
+    padding-right: 50px;
+    &:not(#user) {
+      color: palette(functional, light);
     }
   }
 }
